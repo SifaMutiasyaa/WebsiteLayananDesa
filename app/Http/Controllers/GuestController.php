@@ -19,4 +19,11 @@ class GuestController extends Controller
 
         return view('informasi', compact('jumlah_notifikasi'));
     }
+
+    public function feedback()
+    {
+        $jumlah_notifikasi = Notifikasi::where('user_id', auth()->user()->id ?? null)->where('status_notifikasi', Notifikasi::STATUS_UNREAD)->count() ?? 0;
+
+        return view('feedback', compact('jumlah_notifikasi'));
+    }
 }

@@ -32,6 +32,9 @@
                 <li class="nav-item mr-4">
                     <a class="nav-link font-weight-bold" href="{{ route('wellcome') }}#kontak">Kontak</a>
                 </li>
+                <li class="nav-item mr-4">
+                    <a class="nav-link font-weight-bold" href="{{ route('feedback') }}#kontak">Kritik dan Saran</a>
+                </li>
                 @if (Auth::check())
                     <li class="nav-item dropdown mr-4">
                         <a class="nav-link font-weight-bold dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">

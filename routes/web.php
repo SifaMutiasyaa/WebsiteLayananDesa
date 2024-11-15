@@ -10,6 +10,7 @@ use App\Http\Controllers\User\ServiceController;
 use App\Http\Controllers\Admin\WargaDesaController;
 use App\Http\Controllers\Admin\AdminDesaController;
 use App\Http\Controllers\Admin\AdminServiceController;
+use App\Http\Controllers\FeedbackController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,6 +26,7 @@ use App\Http\Controllers\Admin\AdminServiceController;
 // Guest
 Route::get('/', [GuestController::class, 'wellcome'])->name('wellcome');
 Route::get('/informasi', [GuestController::class, 'informasi'])->name('informasi');
+Route::get('/feedback', [GuestController::class, 'feedback'])->name('feedback');
 
 // Auth
 Route::get('/login', [AuthController::class, 'login'])->name('login');
@@ -87,3 +89,7 @@ Route::middleware(['auth'])->prefix('admin')->group(function () {
     Route::get('/pengaduan/{id}', [AdminServiceController::class, 'pengaduanDetail'])->name('admin.pengaduan.show');
     Route::put('/pengaduan/{id}', [AdminServiceController::class, 'pengaduanUpdate'])->name('admin.pengaduan.update');
 });
+
+// Feedback
+Route::get('/feedback', [FeedbackController::class, 'index'])->name('feedback');
+Route::post('/feedback', [FeedbackController::class, 'store'])->name('feedback.store');
