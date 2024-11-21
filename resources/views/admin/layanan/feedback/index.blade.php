@@ -1,12 +1,12 @@
 @extends('layouts.app')
 
-@section('title', 'Antrian | Desa Sukamaju')
+@section('title', 'Kritik dan Saran | Desa Sukamaju')
 
-@section('page-title', 'Antrian')
+@section('page-title', 'Kritik dan Saran')
 
 @section('location', 'Layanan')
 
-@section('location-title', 'Antrian')
+@section('location-title', 'Kritik dan Saran')
 
 @section('content')
     <div class="container-fluid">
@@ -16,7 +16,7 @@
                 <div class="card">
                     <div class="card-header border-0">
                         <div class="d-flex justify-content-between">
-                            <h3 class="card-title">List Antrian Hari Ini</h3>
+                            <h3 class="card-title">List Kritik dan Saran</h3>
                         </div>
                     </div>
                     <div class="card-body">
@@ -26,23 +26,19 @@
                             <table id="table" class="table table-bordered table-hover">
                                 <thead>
                                     <tr>
-                                        <th>Date</th>
-                                        <th>No Antrian</th>
-                                        <th>NIK</th>
                                         <th>Nama</th>
-                                        <th>Nomor Handphone</th>
-                                        <th>Jenis Pelayanan</th>
+                                        <th>Email</th>
+                                        <th>Pesan</th>
+                                        <th>Tanggal</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @forelse ($antrian as $item)
+                                    @forelse ($feedbacks as $feedback)
                                         <tr>
-                                            <td>{{ $item->created_at }}</td>
-                                            <td>{{ $item->no_antrian }}</td>
-                                            <td>{{ $item->user->nik }}</td>
-                                            <td>{{ $item->user->name }}</td>
-                                            <td>{{ $item->user->phone_number }}</td>
-                                            <td>{{ $item->jenisPelayanan->nama_pelayanan }}</td>
+                                            <td>{{ $feedback->nama ?? 'Anonim' }}</td>
+                                            <td>{{ $feedback->email ?? 'Tidak tersedia' }}</td>
+                                            <td>{{ $feedback->message }}</td>
+                                            <td>{{ $feedback->created_at->format('d-m-Y H:i') }}</td>
                                         </tr>
                                     @empty
                                         <tr>

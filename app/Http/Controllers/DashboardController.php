@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 
-use App\Models\Antrian;
+use App\Models\Feedback;
 use App\Models\Notifikasi;
 use App\Models\Pengaduan;
 use App\Models\SuratPengantar;
@@ -43,10 +43,10 @@ class DashboardController extends Controller
         }
 
         // Data Dasboard
-        $jumlah_antrian = Antrian::where('created_at', 'like', date('Y-m-d') . '%')->count() ?? 0;
+        $jumlah_feedback = Feedback::all()->count() ?? 0;
         $jumlah_pengajuan = SuratPengantar::where('status_pengajuan', SuratPengantar::STATUS_WAITING)->count() ?? 0;
         $jumlah_pengaduan = Pengaduan::all()->count() ?? 0;
 
-        return view('admin.dashboard', compact('salam', 'jumlah_antrian', 'jumlah_pengajuan', 'jumlah_pengaduan'));
+        return view('admin.dashboard', compact('salam', 'jumlah_feedback', 'jumlah_pengajuan', 'jumlah_pengaduan'));
     }
 }

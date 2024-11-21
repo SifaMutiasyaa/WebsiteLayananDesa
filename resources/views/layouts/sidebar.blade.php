@@ -51,10 +51,10 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="{{ route('admin.antrian.index') }}" class="nav-link @if (request()->is('admin/antrian*')) active @endif">
+                    <a href="{{ route('admin.feedback.index') }}" class="nav-link @if (request()->is('admin/feedback*')) active @endif">
                         <i class="nav-icon fas fa-users"></i>
                         <p>
-                            Antrian Pelayanan
+                            Kritik dan Saran
                         </p>
                     </a>
                 </li>

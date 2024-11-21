@@ -13,7 +13,8 @@ return new class extends Migration
     {
         Schema::create('feedback', function (Blueprint $table) {
             $table->id();
-            $table->string('name'); // Nama pengirim feedback
+            $table->string('nama')->nullable();
+            $table->string('email')->nullable();
             $table->text('message'); // Pesan feedback
             $table->timestamps();
         });

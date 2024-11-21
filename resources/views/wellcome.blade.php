@@ -98,7 +98,7 @@
         .container {
             position: relative;
             z-index: 1;
-            padding-top: 10vh; /* Memberikan jarak dari atas agar teks tidak berada terlalu dekat dengan bagian atas layar */
+            padding-top: 1vh; /* Memberikan jarak dari atas agar teks tidak berada terlalu dekat dengan bagian atas layar */
         }
 
         

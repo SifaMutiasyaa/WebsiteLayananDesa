@@ -78,7 +78,8 @@
     <style>
         .navbar {
             margin-bottom: 0;
-            padding: 0; /* Menghilangkan padding */
+            padding-top: 5px;  /* Sesuaikan padding atas */
+            padding-bottom: 5px;  /* Sesuaikan padding bawah */
             position: fixed;
             top: 0;
             left: 0;
@@ -91,8 +92,8 @@
      
 
         .navbar-nav .nav-link {
-            padding-top: 8px;  /* Sesuaikan padding atas */
-            padding-bottom: 8px; /* Sesuaikan padding bawah */
+            padding-top: 5px;  /* Sesuaikan padding atas */
+            padding-bottom: 5px;  /* Sesuaikan padding bawah */
             font-size: 14px;  /* Menurunkan ukuran font untuk navbar */
         }
 
@@ -101,7 +102,7 @@
         }
 
         body {
-            padding-top: 80px;  /* Pastikan ada ruang di bawah navbar */
+            padding-top: 60px;  /* Pastikan ada ruang di bawah navbar */
         }
     </style>
 @endpush

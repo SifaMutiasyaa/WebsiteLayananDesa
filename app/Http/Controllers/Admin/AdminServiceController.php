@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 
-use App\Models\Antrian;
+use App\Models\Feedback;
 use App\Models\Pengaduan;
 use App\Models\Notifikasi;
 use App\Models\SuratPengantar;
@@ -13,13 +13,13 @@ use App\Http\Requests\Admin\UpdateStatusPengajuanRequest;
 
 class AdminServiceController extends Controller
 {
-    // Antrian
-    public function antrian()
+    // Feedback
+    public function feedback()
     {
-        $antrian = Antrian::where('created_at', 'like', date('Y-m-d') . '%')
+        $feedback = feedback::where('created_at', 'like', date('Y-m-d') . '%')
             ->orderBy('created_at', 'asc')->take(20)->get();
 
-        return view('admin.layanan.antrian.index', compact('antrian'));
+        return view('admin.layanan.feedback.index', compact('feedback'));
     }
 
     // Pengajuan

@@ -27,7 +27,10 @@ use App\Http\Controllers\FeedbackController;
 // Guest
 Route::get('/', [GuestController::class, 'wellcome'])->name('wellcome');
 Route::get('/informasi', [GuestController::class, 'informasi'])->name('informasi');
-Route::get('/feedback', [GuestController::class, 'feedback'])->name('feedback');
+
+// Feedback
+Route::get('/feedback', [FeedbackController::class, 'index'])->name('feedback');
+Route::post('/feedback', [FeedbackController::class, 'store'])->name('feedback.store');
 
 // Auth
 Route::get('/login', [AuthController::class, 'login'])->name('login');
@@ -55,7 +58,6 @@ Route::middleware(['auth', 'user'])->group(function () {
     Route::get('/pengaduan/{id}', [ServiceController::class, 'pengaduanDetail'])->name('pengaduan.detail');
     Route::post('/pengaduan', [ServiceController::class, 'pengaduanStore'])->name('pengaduan.store');
 
-    Route::get('/feedback', [GuestController::class, 'feedback'])->name('feedback');
 });
 
 // Admin
@@ -79,8 +81,8 @@ Route::middleware(['auth'])->prefix('admin')->group(function () {
     Route::delete('/warga-desa/{id}', [WargaDesaController::class, 'destroy'])->name('warga.desa.destroy');
 
     // Layanan
-    // --- Antrian
-    Route::get('/antrian', [AdminServiceController::class, 'antrian'])->name('admin.antrian.index');
+    // --- Feedback
+    Route::get('/layanan/feedback', [FeedbackController::class, 'adminIndex'])->name('admin.feedback.index');
 
     // --- Pengajuan
     Route::get('/pengajuan', [AdminServiceController::class, 'pengajuan'])->name('admin.pengajuan.index');
@@ -93,8 +95,5 @@ Route::middleware(['auth'])->prefix('admin')->group(function () {
     Route::put('/pengaduan/{id}', [AdminServiceController::class, 'pengaduanUpdate'])->name('admin.pengaduan.update');
 });
 
-// Feedback
-Route::get('/feedback', [FeedbackController::class, 'index'])->name('feedback');
-Route::post('/feedback', [FeedbackController::class, 'store'])->name('feedback.store');
 
 
