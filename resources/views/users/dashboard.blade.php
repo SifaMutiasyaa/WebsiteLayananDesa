@@ -18,9 +18,9 @@
                         <i class="fa fa-file-alt fa-6x"></i>
                         <p class="text-lg mt-4">Pengajuan Surat Pengantar</p>
                     </a>
-                    <a class="layanan" href="{{ route('antrian') }}">
+                    <a class="layanan" href="{{ route('feedback') }}">
                         <i class="fa fa-users fa-6x"></i>
-                        <p class="text-lg mt-4">Ambil Antrian Pelayanan</p>
+                        <p class="text-lg mt-4">Berikan Kritik dan Saran</p>
                     </a>
                     <a class="layanan" href="{{ route('pengaduan') }}">
                         <i class="fa fa-chalkboard-teacher fa-6x"></i>

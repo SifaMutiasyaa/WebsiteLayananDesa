@@ -57,7 +57,7 @@
         </aside>
 
         <footer class="main-footer">
-            <strong>Copyright &copy; <a href="{{ route('dashboard.admin') }}">Desa Sukamaju</a>.</strong>
+            <strong>Copyright &copy; <a href="{{ route('dashboard.admin') }}">Desa Cikamunding</a>.</strong>
             All rights reserved.
         </footer>
     </div>

@@ -3,7 +3,7 @@
         <a class="navbar-brand d-flex align-items-center" href="{{ route('wellcome') }}">
             <img src="{{ asset('img/logo.png') }}" class="d-inline-block" width="50" height="50" alt="">
             <div class="d-flex flex-column ml-3">
-                <span class="text-sm">desa</span>
+                <span class="text-sm">DESA</span>
                 <span class="text-bold text-sm">CIKAMUNDING</span>
             </div>
         </a>

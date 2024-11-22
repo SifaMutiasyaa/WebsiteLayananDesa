@@ -17,7 +17,7 @@
 
     <link rel="icon" href="{{ asset('img/logo.ico') }}" type="image/x-icon" />
 
-    <title>Desa Sukamaju | @yield('title')</title>
+    <title>Desa Cikamunding | @yield('title')</title>
 
     <style>
         .navbar-green {

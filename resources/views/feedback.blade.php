@@ -116,8 +116,6 @@
     padding: 10px;                  
     }
 
-}
-
 
 </style>
 @endpush

@@ -13,22 +13,23 @@
 @include('layouts.navbar')
 
      <!-- Bagian Latar Belakang Video -->
-     <div class="w-screen h-screen my-0 video-bg">
-        <video autoplay muted loop>
+     <div class="w-screen h-screen my-0 video-bg position-relative">
+        <video autoplay muted loop class="w-100 h-100 object-fit-cover">
             <source src="{{ asset('img/vid.mp4') }}" type="video/mp4">
             Your browser does not support the video tag.
         </video>
-        <div class="container text-overlay">
-            <div class="row m-0">
-                <div class="col-7 d-flex">
-                    <div class="row align-self-center">
-                        <h1 class="text-bold" style="font-size: 50px;">SELAMAT DATANG DI LAYANAN <br /> DESA CIKAMUNDING</h1>
-                        <p>Permudah urusan administrasi dan pelayanan desa melalui interaksi  digital <br> antara pemerintah desa dan warga</p>
-                    </div>
-                </div>
+        <div class="d-flex justify-content-center align-items-center position-absolute top-0 start-0 w-100 h-100">
+            <div class="text-center" style="max-width: 800px; margin-top: -200px;">
+                <h1 class="text-bold" style="font-size: 50px; line-height: 1.2; color: white; text-shadow: 2px 2px 0px black, -2px -2px 0px black, 2px -2px 0px black, -2px 2px 0px black;">
+                SELAMAT DATANG DI LAYANAN DESA <br /> CIKAMUNDING
+                </h1>
+                <p style="font-size: 18px; line-height: 1.5; color: white; text-shadow: 1px 1px 0px black, -1px -1px 0px black, 1px -1px 0px black, -1px 1px 0px black;">
+                    Permudah urusan administrasi dan pelayanan desa melalui interaksi digital <br> antara pemerintah desa dan warga
+                </p>
             </div>
         </div>
     </div>
+
 
     
 

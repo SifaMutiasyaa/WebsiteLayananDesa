@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Detail Pengajuan Surat | Desa Sukamaju')
+@section('title', 'Detail Pengajuan Surat | Desa Cikamunding')
 
 @section('page-title', 'Pengajuan Surat')
 

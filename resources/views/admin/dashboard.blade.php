@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Dashboard | Desa Sukamaju')
+@section('title', 'Dashboard | Desa Cikamunding')
 
 @section('page-title', 'Dashboard')
 
@@ -63,7 +63,7 @@
                     <div class="card-body">
                         <div class="jumbotron">
                             <h1 class="display-4">{{ $salam }}</h1>
-                            <p class="lead">Terwujudnya Desa Sukamaju yang aman, sehat, cerdas, berbudaya, berakhlaq mulia dan berdaya saing menuju pelayanan yang cepat dan tepat</p>
+                            <p class="lead">Terwujudnya Desa Cikamunding yang aman, sehat, cerdas, berbudaya, berakhlaq mulia dan berdaya saing menuju pelayanan yang cepat dan tepat</p>
                             <hr class="my-4">
                             <p>Hallo, {{ auth()->user()->name }}</p>
                         </div>

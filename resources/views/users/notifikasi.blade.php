@@ -49,11 +49,10 @@
             height: 100vh;
         }
 
-        .backgroud-desa {
-            background-image: url("{{ asset('img/banner-user-dashboard.webp') }}");
+        body {
+            background: url('{{ asset('img/banner-user-dashboard.webp') }}') no-repeat center center fixed;
             background-size: cover;
-            top: 0;
-            z-index: 1;
+            min-height: 100vh;
         }
 
         .layanan {
