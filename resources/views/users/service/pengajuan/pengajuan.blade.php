@@ -6,6 +6,14 @@
 
 @section('content')
 
+<style>
+        body {
+            background: url('{{ asset('img/banner-user-dashboard.webp') }}') no-repeat center center fixed;
+            background-size: cover;
+            min-height: 100vh;
+        }
+    </style>
+
     <div class="p-5">
 
         <form method="POST" action="{{ route('pengajuan.store') }}" enctype="multipart/form-data">

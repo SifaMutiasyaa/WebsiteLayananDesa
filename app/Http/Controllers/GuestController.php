@@ -29,6 +29,8 @@ class GuestController extends Controller
 
     public function berita()
     {
+
+        $jumlah_notifikasi = Notifikasi::where('user_id', auth()->user()->id ?? null)->where('status_notifikasi', Notifikasi::STATUS_UNREAD)->count() ?? 0;        
         $berita = [
         [
             'judul' => 'Dicuekin Pemerintah, Ribuan Warga Cikamunding Gotong Royong Perbaiki Jalan Rusak',
@@ -74,7 +76,7 @@ class GuestController extends Controller
     }
 
 
-    return view('berita', compact('berita'));
+    return view('berita', compact('berita','jumlah_notifikasi'));
     }
 
 

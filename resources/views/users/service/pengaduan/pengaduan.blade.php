@@ -6,6 +6,16 @@
 
 @section('content')
 
+
+    <style>
+        body {
+            background: url('{{ asset('img/banner-user-dashboard.webp') }}') no-repeat center center fixed;
+            background-size: cover;
+            min-height: 100vh;
+        }
+    </style>
+
+
     <div class="p-5">
 
         <h4 class="text-center mb-4">"Menyuarakan Ketidakpuasan secara Anonim: Mengungkap Pengaduan yang Tersembunyi"</h4>
@@ -29,6 +39,19 @@
 
 @push('styles')
     <style>
+
+          #isi_pengaduan {
+            background-color: #f0f0f0; 
+            border: 1px solid #d0d0d0; 
+            color: #333; 
+            padding: 10px;
+            border-radius: 8px;
+        }
+
+        #isi_pengaduan:focus {
+            outline: none;
+            border-color: #51839C; 
+        }
         .btn-green-pastel {
             background-color: #51839C !important;
             border-color: #51839C !important;
