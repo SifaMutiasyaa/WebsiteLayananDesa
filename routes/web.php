@@ -28,9 +28,14 @@ use App\Http\Controllers\FeedbackController;
 Route::get('/', [GuestController::class, 'wellcome'])->name('wellcome');
 Route::get('/informasi', [GuestController::class, 'informasi'])->name('informasi');
 
+// Laman berita
+Route::get('/berita', [GuestController::class, 'berita'])->name('berita');
+
 // Feedback
 Route::get('/feedback', [FeedbackController::class, 'index'])->name('feedback');
 Route::post('/feedback', [FeedbackController::class, 'store'])->name('feedback.store');
+
+
 
 // Auth
 Route::get('/login', [AuthController::class, 'login'])->name('login');

@@ -17,8 +17,9 @@
                     <a class="nav-link font-weight-bold" href="{{ route('wellcome') }}#profile">Profile Desa</a>
                 </li>
 
+            <!-- Berita -->
                 <li class="nav-item mr-4">
-                    <a class="nav-link font-weight-bold" href="{{ route('wellcome') }}#berita">Laman Berita</a>
+                <a class="nav-link font-weight-bold" href="{{ route('berita') }}">Laman Berita</a>
                 </li>
 
                 <li class="nav-item dropdown mr-4">
