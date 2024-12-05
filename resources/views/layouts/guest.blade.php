@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="{{ asset('plugins/daterangepicker/daterangepicker.css') }}">
     <link rel="stylesheet" href="{{ asset('dist/css/adminlte.min.css') }}">
 
-    <link rel="icon" href="{{ asset('img/logo.ico') }}" type="image/x-icon" />
+    <link rel="icon" href="{{ asset('img/logo.png') }}" type="image/x-icon" />
 
     <!-- Buat feedback -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">

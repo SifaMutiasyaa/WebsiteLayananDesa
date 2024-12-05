@@ -21,7 +21,7 @@
     <link rel="stylesheet" href="{{ asset('plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css') }}">
 
     <!-- Favicons -->
-    <link rel="icon" href="img/logo.ico" type="image/x-icon" />
+    <link rel="icon" href="img/logo.png" type="image/x-icon" />
 
     <style>
         .min-h-screen {
