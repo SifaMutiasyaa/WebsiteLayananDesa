@@ -3,101 +3,146 @@
 @section('title', 'Login')
 
 @section('content')
-    <div class="row min-h-screen align-items-center justify-content-between">
-        <div class="col-7">
-            <div class="container">
-                <div class="d-flex flex-column justify-content-center align-items-center mb-5">
-                    <a href="{{ route('wellcome') }}" class="pointer-event">
-                        <img src="{{ asset('img/logo.png') }}" alt="Logo" class="img-md">
-                    </a>
-                    <h1>Login</h1>
-                </div>
-
-                @if (session('error'))
-                    <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                        {{ session('error') }}
-                    </div>
-                @endif
-
-                <form method="POST" action="{{ route('login.user') }}">
-                    @csrf
-
-                    <div class="form-group">
-                        <label for="nik" class="mb-4">NIK</label>
-                        <input type="text" class="form-control rounded-pill py-4 px-3 @if ($errors->has('nik')) is-invalid @endif" id="nik" name="nik" value="{{ old('nik') }}" autofocus
-                            placeholder="Masukkan NIK anda yang telah terdaftar!" data-inputmask='"mask": "9999999999999999"' data-mask>
-                        @if ($errors->has('nik'))
-                            <div class="invalid-feedback">
-                                {{ $errors->first('nik') }}
-                            </div>
-                        @endif
+    <div class="row min-vh-100 align-items-center justify-content-center px-3">
+        <div class="col-lg-6 col-md-8 col-sm-10">
+            <div class="card shadow border-0 rounded-lg">
+                <div class="card-body p-5">
+                    <div class="text-center mb-4">
+                        <a href="{{ route('wellcome') }}">
+                            <img src="{{ asset('img/logo.png') }}" alt="Logo" class="img-fluid mb-3" style="max-width: 150px;">
+                        </a>
+                        <h3 class="text-primary font-weight-bold">LOGIN</h3>
                     </div>
 
-                    <div class="form-group position-relative">
-                        <label for="password" class="mb-4">Password</label>
-                        <div class="input-group" id="show_hide_password">
-                            <input type="password" class="form-control rounded-pill py-4 px-3 @if ($errors->has('password')) is-invalid @endif" id="password" name="password"
-                                placeholder="Gunakan tanggal lahir sebagai password 'tanpa menggunakan spasi dan - '">
-                            <div class="position-absolute right-midlle">
-                                <a href=""><i class="fa fa-eye-slash" aria-hidden="true"></i></a>
-                            </div>
+                    @if (session('error'))
+                        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                            {{ session('error') }}
                         </div>
-                        @if ($errors->has('password'))
-                            <div class="invalid-feedback">
-                                {{ $errors->first('password') }}
-                            </div>
-                        @endif
-                    </div>
+                    @endif
 
-                    <div class="d-flex w-100 justify-content-center mt-5">
-                        <a href="{{ route('wellcome') }}" class="btn btn-outline-secondary px-5 py-2 rounded-pill mr-3">Halaman Utama</a>
-                        <button type="submit" class="btn btn-primary btn-green-pastel px-5 py-2 rounded-pill">Login</button>
-                    </div>
-                </form>
+                    <form method="POST" action="{{ route('login.user') }}">
+                        @csrf
+
+                        <div class="form-group">
+                            <label for="nik" class="form-label">NIK</label>
+                            <input type="text" class="form-control @if ($errors->has('nik')) is-invalid @endif" id="nik" name="nik" value="{{ old('nik') }}" autofocus
+                                placeholder="Masukkan NIK anda" data-inputmask='"mask": "9999999999999999"' data-mask>
+                            @if ($errors->has('nik'))
+                                <div class="invalid-feedback">
+                                    {{ $errors->first('nik') }}
+                                </div>
+                            @endif
+                        </div>
+
+                        <div class="form-group position-relative">
+                            <label for="password" class="form-label">Password</label>
+                            <div class="input-group">
+                                <input type="password" class="form-control @if ($errors->has('password')) is-invalid @endif" id="password" name="password"
+                                    placeholder="Masukkan password">
+                                <div class="input-group-append">
+                                    <button class="btn btn-outline-secondary toggle-password" type="button">
+                                        <i class="fa fa-eye-slash"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            @if ($errors->has('password'))
+                                <div class="invalid-feedback">
+                                    {{ $errors->first('password') }}
+                                </div>
+                            @endif
+                        </div>
+
+                        <div class="d-flex justify-content-between align-items-center mt-4">
+                            <a href="{{ route('wellcome') }}" class="btn btn-outline-primary">Halaman Utama</a>
+                            <button type="submit" class="btn btn-primary">Login</button>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
-        <div class="col-4">
-            <img src="{{ asset('img/banner-login.webp') }}" alt="logo" class="img-fluid">
-        </div>
+
+       
     </div>
 @endsection
 
 @push('styles')
     <style>
-        .right-midlle {
-            right: 15px;
-            top: 50%;
-            transform: translateY(-50%);
-            z-index: 9999;
+        body {
+            background: url('{{ asset('img/banner-user-dashboard.webp') }}') no-repeat center center fixed;
+            background-size: cover;
+            min-height: 100vh;
         }
 
-        .btn-green-pastel {
+        .card {
+            background: #ffffff;
+            border-radius: 12px;
+            padding: 20px;
+        }
+
+        .text-primary {
+    color: #000000 !important;
+}
+
+        .btn-primary {
             background-color: #51839C;
-            border-color: #51839C;
-            color: #fff;
+            border: none;
         }
 
-        .btn-green-pastel:hover {
+        .btn-primary:hover {
             background-color: #3B6C81;
-            border-color: #3B6C81;
-            color: #fff;
+        }
+
+        .btn-outline-primary {
+            border-color: #51839C;
+            color: #51839C;
+        }
+
+        .btn-outline-primary:hover {
+            background-color: #51839C;
+            color: #ffffff;
+        }
+
+        .form-label {
+            font-weight: bold;
+            color: #333;
+        }
+
+        .input-group .toggle-password {
+            background: transparent;
+            border: none;
+        }
+
+        .input-group .toggle-password i {
+            color: #666;
+        }
+
+        .input-group .toggle-password:hover i {
+            color: #000;
+        }
+
+        @media (max-width: 768px) {
+            .row {
+                margin-top: 20px;
+            }
         }
     </style>
 @endpush
 
 @push('scripts')
     <script>
-        $(document).ready(function() {
-            $("#show_hide_password a").on('click', function(event) {
-                event.preventDefault();
-                if ($('#show_hide_password input').attr("type") == "text") {
-                    $('#show_hide_password input').attr('type', 'password');
-                    $('#show_hide_password i').addClass("fa-eye-slash");
-                    $('#show_hide_password i').removeClass("fa-eye");
-                } else if ($('#show_hide_password input').attr("type") == "password") {
-                    $('#show_hide_password input').attr('type', 'text');
-                    $('#show_hide_password i').removeClass("fa-eye-slash");
-                    $('#show_hide_password i').addClass("fa-eye");
+        document.querySelectorAll('.toggle-password').forEach(function (btn) {
+            btn.addEventListener('click', function () {
+                const passwordInput = btn.closest('.input-group').querySelector('input');
+                const icon = btn.querySelector('i');
+
+                if (passwordInput.type === 'password') {
+                    passwordInput.type = 'text';
+                    icon.classList.remove('fa-eye-slash');
+                    icon.classList.add('fa-eye');
+                } else {
+                    passwordInput.type = 'password';
+                    icon.classList.remove('fa-eye');
+                    icon.classList.add('fa-eye-slash');
                 }
             });
         });
